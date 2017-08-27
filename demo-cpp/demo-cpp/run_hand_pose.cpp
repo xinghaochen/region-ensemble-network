@@ -8,7 +8,7 @@
 // First include the librealsense C++ header file
 #include <librealsense/rs.hpp>
 #include <cstdio>
-#include <opencv2\opencv.hpp>
+#include <opencv2/opencv.hpp>
 #include "hand_pose_estimator.h"
 
 int main() try

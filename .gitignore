@@ -1,6 +1,8 @@
 *.pyc
 *.png
-*.txt
 *.gif
 *.caffemodel
 .spyproject*
+
+*core
+*build

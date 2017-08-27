@@ -10,8 +10,8 @@
 #include <string>
 #include <vector>
 
-#include <gflags/gflags.h>
-#include <glog/logging.h>
+//#include <gflags/gflags.h>
+//#include <glog/logging.h>
 
 #include "boost/algorithm/string.hpp"
 #include "google/protobuf/text_format.h"
@@ -23,7 +23,7 @@
 #include "caffe/util/format.hpp"
 #include "caffe/util/io.hpp"
 
-#include <opencv2\opencv.hpp>
+#include <opencv2/opencv.hpp>
 
 using caffe::Blob;
 using caffe::Caffe;

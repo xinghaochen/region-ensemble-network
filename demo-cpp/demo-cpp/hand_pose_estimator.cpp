@@ -9,8 +9,8 @@
 #include <string>
 #include <vector>
 
-#include <gflags/gflags.h>
-#include <glog/logging.h>
+//#include <gflags/gflags.h>
+//#include <glog/logging.h>
 
 #include "boost/algorithm/string.hpp"
 #include "google/protobuf/text_format.h"
@@ -46,8 +46,8 @@ HandPoseEstimator::HandPoseEstimator() {
 	height = 96;
 	width = 96;
 	output_blob = "predict";
-	weights = "D:/Projects/region-ensemble-network/models/model_icvl_ren_9x6x6.caffemodel";
-	model = "D:/Projects/region-ensemble-network/models/deploy_icvl_ren_9x6x6.prototxt";
+	weights = "models/model_icvl_ren_9x6x6.caffemodel";
+	model = "models/deploy_icvl_ren_9x6x6.prototxt";
 	init_model();
 }
 
