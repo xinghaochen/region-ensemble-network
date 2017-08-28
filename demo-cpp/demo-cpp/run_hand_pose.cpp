@@ -1,9 +1,3 @@
-// License: Apache 2.0. See LICENSE file in root directory.
-// Copyright(c) 2015 Intel Corporation. All Rights Reserved.
-
-/////////////////////////////////////////////////////
-// librealsense tutorial #1 - Accessing depth data //
-/////////////////////////////////////////////////////
 
 // First include the librealsense C++ header file
 #include <librealsense/rs.hpp>

@@ -1,10 +1,4 @@
 #pragma once
-/*************************************************************************
-> File Name: output_pose.cpp
-> Author: Guo Hengkai
-> Description:
-> Created Time: Sun 06 Nov 2016 10:47:29 AM CST
-************************************************************************/
 #include <fstream>
 #include <sstream>
 #include <string>
