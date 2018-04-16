@@ -2,9 +2,10 @@
 demo-cpp
 *.pyc
 *.png
+*.txt
 *.gif
 *.caffemodel
 .spyproject*
-
-*core
-*build
+.idea
+training
+caffe-pose
