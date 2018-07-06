@@ -2,12 +2,12 @@
 By Hengkai Guo (Updated on Aug 9, 2017)
 
 ## Description
-This is the project of work [Region Ensemble Network: Improving Convolutional Network for Hand Pose Estimation](https://arxiv.org/abs/1702.02447) and [Towards Good Practices for Deep 3D Hand Pose Estimation](https://arxiv.org/abs/1707.07248). This repository includes the prediction results for comparison, prediction codes and visualization codes. More details will be released in the future. Here are live results from Kinect 2 sensor using the model trained on ICVL:
+This is the project of work [Region Ensemble Network: Improving Convolutional Network for Hand Pose Estimation](https://arxiv.org/abs/1702.02447) and [Region Ensemble Network: Towards Good Practices for Deep 3D Hand Pose Estimation](https://www.sciencedirect.com/science/article/pii/S1047320318300816). This repository includes the prediction results for comparison, prediction codes and visualization codes. More details will be released in the future. Here are live results from Kinect 2 sensor using the model trained on ICVL:
 
 ![result1.gif](demo/output_icvl_xinghao.gif) ![result2.gif](demo/output_icvl_hengkai.gif)
 
 ## Results
-Here we provide the testing results of basic network (`results/dataset_basic.txt`) and region ensemble network (`results/dataset_ren_nx6x6.txt`) for [ICVL](http://www.iis.ee.ic.ac.uk/~dtang/hand.html) dataset, [NYU](http://cims.nyu.edu/~tompson/NYU_Hand_Pose_Dataset.htm) dataset and [MSRA](http://research.microsoft.com/en-us/um/people/yichenw/handpose/cvpr15_MSRAHandGestureDB.zip) dataset in our paper. Also we provide the testing labels (`labels/dataset_test_label.txt`), computed centers (`labels/dataset_center.txt`, which can be computed by `evaluation/get_centers.py`) and corresponding image names (`labels/dataset_test_list.txt`). Currently, the MSRA center computation is not available due to lack of loading function for images.
+Here we provide the testing results of basic network (`results/dataset_basic.txt`) and region ensemble network (`results/dataset_ren_nx6x6.txt`) for [ICVL](https://labicvl.github.io/hand.html) dataset, [NYU](http://cims.nyu.edu/~tompson/NYU_Hand_Pose_Dataset.htm) dataset and [MSRA](http://research.microsoft.com/en-us/um/people/yichenw/handpose/cvpr15_MSRAHandGestureDB.zip) dataset in our paper. Also we provide the testing labels (`labels/dataset_test_label.txt`), computed centers (`labels/dataset_center.txt`, which can be computed by `evaluation/get_centers.py`) and corresponding image names (`labels/dataset_test_list.txt`). Currently, the MSRA center computation is not available due to lack of loading function for images.
 
 For results and labels, each line is corresponding to one image, which has J x 3 numbers indicating (x, y, z) of J joint locations. The (x, y) are in pixels and z is in mm.
 
@@ -20,14 +20,14 @@ $ python evaluation/compute_error.py icvl results/icvl_ren_9x6x6.txt
 ## Visualization
 Please use the Python script `evaluation/show_result.py` for visualziation, which also requires [OpenCV](http://opencv.org/):
 ``` bash
-$ python evaluation/show_result.py icvl your/path/to/ICVL/images/test/Depth --in_file=results/icvl_ren_4x6x6.txt
+$ python evaluation/show_result.py icvl your/path/to/ICVL/test/Depth --in_file=results/icvl_ren_4x6x6.txt
 ```
 You can see all the testing results on the images. Press 'q' to exit.
 
 ## Prediction
 Please use the Python script `evaluation/run_model.py` for prediction with predefined centers in `labels` directory:
 ``` bash
-$ python evaluation/run_model.py icvl ren_4x6x6 your/path/to/output/file your/path/to/ICVL/images/test
+$ python evaluation/run_model.py icvl ren_4x6x6 your/path/to/output/file your/path/to/ICVL/test/Depth
 ```
 The script depends on [pyCaffe](https://github.com/BVLC/caffe). Please install the Caffe first.
 
@@ -59,17 +59,22 @@ We tested this realtime demo with an [Intel Realsense SR300](https://software.in
 Please cite the paper in your publications if it helps your research:
 
 ```
-@article{guo2017towards,
-  title={Towards Good Practices for Deep 3D Hand Pose Estimation},
-  author={Guo, Hengkai and Wang, Guijin and Chen, Xinghao and Zhang, Cairong},
-  journal={arXiv preprint arXiv:1707.07248},
-  year={2017}
+@article{wang2018region,
+  title={Region Ensemble Network: Towards Good Practices for Deep 3D Hand Pose Estimation},
+  author={Wang, Guijin and Chen, Xinghao and Guo, Hengkai and Zhang, Cairong},
+  journal={Journal of Visual Communication and Image Representation},
+  volume={55},
+  pages={404--414}
+  year={2018},
+  publisher={Elsevier}
 }
-@article{guo2017region,
-  title={Region Ensemble Network: Improving Convolutional Network for Hand Pose Estimation},
+@inproceedings{guo2017region,
+  title={Region ensemble network: Improving convolutional network for hand pose estimation},
   author={Guo, Hengkai and Wang, Guijin and Chen, Xinghao and Zhang, Cairong and Qiao, Fei and Yang, Huazhong},
-  journal={arXiv preprint arXiv:1702.02447},
-  year={2017}
+  booktitle={Image Processing (ICIP), 2017 IEEE International Conference on},
+  pages={4512--4516},
+  year={2017},
+  organization={IEEE}
 }
 ```
 
